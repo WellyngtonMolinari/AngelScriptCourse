@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de AngelScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagens/angelscriptimage.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Botão para alternar entre modos claro e escuro -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">🌙</button>
+
+    <!-- Botão de Toggle para a Sidebar -->
+    <button class="toggle-btn" id="toggle-sidebar">☰ Menu</button>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h3>
+            Navegação do Curso
+            <button class="hide-sidebar-btn" id="hide-sidebar">&lt;</button>
+        </h3>
+        <nav>
+            <a href="#section1">O que é AngelScript?</a>
+        </nav>
+        <h3>Páginas Relacionadas</h3>
+        <a href="index.html">Início</a>
+        <a href="https://github.com/WellyngtonMolinari" target="_blank">Meu Github</a>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container" id="main-content">
+        <h1>Curso de AngelScript</h1>
+
+        <!-- Espaço para a imagem -->
+        <div class="image-container">
+            <img src="imagens/angelscriptimage.png" alt="Imagem do Curso">
+        </div>
+
+        <!-- Seção 5: Funções -->
+        <section>
+            <h2 id="funcoes">Módulo 5: Funções</h2>
+            <p>Este módulo aborda a definição e utilização de funções em AngelScript.</p>
+
+            <!-- Definição de funções -->
+            <h3>Definição de funções</h3>
+            <p>Uma função é um bloco de código que realiza uma tarefa específica. Em AngelScript, as funções são definidas com a seguinte sintaxe:</p>
+            <pre><code class="language-angelscript">
+        void MinhaFuncao() {
+            // Corpo da função
+        }
+            </code></pre>
+            <p>Exemplo de definição de uma função simples:</p>
+            <pre><code class="language-angelscript">
+        void ExibirMensagem() {
+            print("Olá, mundo!");
+        }
+            </code></pre>
+
+            <!-- Parâmetros e retorno de funções -->
+            <h3>Parâmetros e retorno de funções</h3>
+            <p>Funções podem aceitar parâmetros e retornar valores. Parâmetros são especificados na definição da função, e o valor de retorno é especificado com a palavra-chave <code>return</code>.</p>
+            <pre><code class="language-angelscript">
+        int Somar(int a, int b) {
+            return a + b;
+        }
+            </code></pre>
+            <p>Exemplo de chamada de função com parâmetros e recebendo um valor de retorno:</p>
+            <pre><code class="language-angelscript">
+        int resultado = Somar(5, 3); // resultado será 8
+            </code></pre>
+
+            <!-- Escopo de variáveis em funções -->
+            <h3>Escopo de variáveis em funções</h3>
+            <p>O escopo de uma variável refere-se à parte do programa onde a variável é acessível. Variáveis definidas dentro de uma função são locais a essa função e não podem ser acessadas fora dela.</p>
+            <pre><code class="language-angelscript">
+        void FuncaoTeste() {
+            int x = 10; // x é local a FuncaoTeste
+            print(x); // Isso é válido
+        }
+        // print(x); // Isso é inválido, x não está no escopo
+            </code></pre>
+            <p>Exemplo de escopo de variáveis dentro de uma função:</p>
+            <pre><code class="language-angelscript">
+        void CalcularQuadrado() {
+            int numero = 4;
+            int quadrado = numero * numero;
+            print("O quadrado de " + numero + " é " + quadrado);
+        }
+
+        CalcularQuadrado(); // Saída: O quadrado de 4 é 16
+            </code></pre>
+        </section>
+
+
+
+        <!-- Link de Retorno -->
+        <a href="index.html">← Voltar para a página principal</a>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Wellyngton Molinari. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
