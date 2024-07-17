@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de AngelScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagens/angelscriptimage.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Botão para alternar entre modos claro e escuro -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">🌙</button>
+
+    <!-- Botão de Toggle para a Sidebar -->
+    <button class="toggle-btn" id="toggle-sidebar">☰ Menu</button>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h3>
+            Navegação do Curso
+            <button class="hide-sidebar-btn" id="hide-sidebar">&lt;</button>
+        </h3>
+        <nav>
+            <a href="#section1">O que é AngelScript?</a>
+        </nav>
+        <h3>Páginas Relacionadas</h3>
+        <a href="index.html">Início</a>
+        <a href="https://github.com/WellyngtonMolinari" target="_blank">Meu Github</a>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container" id="main-content">
+        <h1>Curso de AngelScript</h1>
+
+        <!-- Espaço para a imagem -->
+        <div class="image-container">
+            <img src="imagens/angelscriptimage.png" alt="Imagem do Curso">
+        </div>
+
+        <!-- Seção 7: Arrays e Strings -->
+        <section>
+            <h2 id="arrays">Módulo 7: Arrays e Strings</h2>
+            <p>Este módulo cobre a manipulação de arrays e strings em AngelScript.</p>
+
+            <!-- Definição e uso de arrays -->
+            <h3>Definição e uso de arrays</h3>
+            <p>Arrays são coleções de elementos do mesmo tipo. Eles são definidos usando colchetes <code>[]</code>.</p>
+            <pre><code class="language-angelscript">
+        array<int> numeros = {1, 2, 3, 4, 5};
+        print(numeros[0]); // Saída: 1
+            </code></pre>
+            <p>Exemplo de definição e uso de arrays:</p>
+            <pre><code class="language-angelscript">
+        array<string> frutas = {"maçã", "banana", "laranja"};
+        print(frutas[1]); // Saída: banana
+
+        // Adicionando um elemento ao array
+        frutas.insertLast("uva");
+        print(frutas[3]); // Saída: uva
+            </code></pre>
+
+            <!-- Manipulação de strings -->
+            <h3>Manipulação de strings</h3>
+            <p>Strings são cadeias de caracteres. Em AngelScript, elas são manipuladas usando a classe <code>string</code>.</p>
+            <pre><code class="language-angelscript">
+        string saudacao = "Olá, mundo!";
+        print(saudacao); // Saída: Olá, mundo!
+            </code></pre>
+            <p>Exemplo de manipulação de strings:</p>
+            <pre><code class="language-angelscript">
+        string nome = "João";
+        string mensagem = "Bem-vindo, " + nome + "!";
+        print(mensagem); // Saída: Bem-vindo, João!
+
+        // Obtendo o tamanho da string
+        int comprimento = mensagem.length();
+        print(comprimento); // Saída: 14
+            </code></pre>
+
+            <!-- Funções de array e string -->
+            <h3>Funções de array e string</h3>
+            <p>AngelScript fornece várias funções para manipulação de arrays e strings.</p>
+            <pre><code class="language-angelscript">
+        // Funções de array
+        array<int> numeros = {5, 3, 8, 1};
+        numeros.sortAsc();
+        print(numeros[0]); // Saída: 1
+
+        // Funções de string
+        string texto = "AngelScript";
+        print(texto.substr(0, 5)); // Saída: Angel
+        print(texto.find("Script")); // Saída: 5
+            </code></pre>
+            <p>Exemplo de funções de array e string:</p>
+            <pre><code class="language-angelscript">
+        // Funções adicionais de array
+        array<int> numeros = {10, 20, 30, 40};
+        numeros.insertAt(2, 25); // Insere o valor 25 na posição 2
+        print(numeros[2]); // Saída: 25
+        numeros.removeAt(1); // Remove o elemento na posição 1
+        print(numeros[1]); // Saída: 25
+
+        // Funções adicionais de string
+        string frase = "Aprender AngelScript é divertido!";
+        print(frase.findLast("e")); // Saída: 25 (posição do último 'e')
+        print(frase.toUpper()); // Saída: APRENDER ANGELSCRIPT É DIVERTIDO!
+            </code></pre>
+        </section>
+
+
+
+        <!-- Link de Retorno -->
+        <a href="index.html">← Voltar para a página principal</a>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Wellyngton Molinari. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
