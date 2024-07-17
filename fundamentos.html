@@ -23,6 +23,7 @@
         <nav>
             <a href="#variaveis-tipos">Variáveis e tipos de dados</a>
             <a href="#operadores">Operadores aritméticos, lógicos e de comparação</a>
+            <a href="#estruturas-controle">Estruturas de controle básicas</a>
         </nav>
         <h3>Páginas Relacionadas</h3>
         <a href="extras.html">Extras</a>
@@ -94,23 +95,160 @@
         <section>
             <h2 id="operadores">Operadores aritméticos, lógicos e de comparação</h2>
             <p>Nesta seção, você aprenderá sobre operadores aritméticos, lógicos e de comparação no AngelScript.</p>
+
+            <!-- Operadores aritméticos -->
+            <h3>Operadores aritméticos</h3>
+            <p>Os operadores aritméticos são utilizados para realizar operações matemáticas básicas. Em AngelScript, os operadores aritméticos incluem:</p>
             <ul>
-                <li>Operadores aritméticos</li>
-                <li>Operadores lógicos</li>
-                <li>Operadores de comparação</li>
+                <li><strong>+</strong>: Adição</li>
+                <li><strong>-</strong>: Subtração</li>
+                <li><strong>*</strong>: Multiplicação</li>
+                <li><strong>/</strong>: Divisão</li>
+                <li><strong>%</strong>: Módulo (resto da divisão)</li>
             </ul>
+            <p>Exemplo de uso dos operadores aritméticos:</p>
+            <pre><code class="language-angelscript">
+        int a = 10;
+        int b = 5;
+        int soma = a + b;         // Adição
+        int diferenca = a - b;    // Subtração
+        int produto = a * b;      // Multiplicação
+        int quociente = a / b;    // Divisão
+        int resto = a % b;        // Módulo
+            </code></pre>
+
+            <!-- Operadores lógicos -->
+            <h3>Operadores lógicos</h3>
+            <p>Os operadores lógicos são utilizados para realizar operações lógicas, geralmente em expressões condicionais. Em AngelScript, os operadores lógicos incluem:</p>
+            <ul>
+                <li><strong>&&</strong>: E lógico (AND)</li>
+                <li><strong>||</strong>: Ou lógico (OR)</li>
+                <li><strong>!</strong>: Não lógico (NOT)</li>
+            </ul>
+            <p>Exemplo de uso dos operadores lógicos:</p>
+            <pre><code class="language-angelscript">
+        bool x = true;
+        bool y = false;
+        bool resultadoE = x && y;   // E lógico
+        bool resultadoOu = x || y;  // Ou lógico
+        bool resultadoNao = !x;     // Não lógico
+            </code></pre>
+
+            <!-- Operadores de comparação -->
+            <h3>Operadores de comparação</h3>
+            <p>Os operadores de comparação são utilizados para comparar valores e retornam um valor booleano (verdadeiro ou falso). Em AngelScript, os operadores de comparação incluem:</p>
+            <ul>
+                <li><strong>==</strong>: Igual a</li>
+                <li><strong>!=</strong>: Diferente de</li>
+                <li><strong>&gt;</strong>: Maior que</li>
+                <li><strong>&gt;=</strong>: Maior ou igual a</li>
+                <li><strong>&lt;</strong>: Menor que</li>
+                <li><strong>&lt;=</strong>: Menor ou igual a</li>
+            </ul>
+            <p>Exemplo de uso dos operadores de comparação:</p>
+            <pre><code class="language-angelscript">
+        int x = 10;
+        int y = 5;
+        bool igual = (x == y);           // Igual a
+        bool diferente = (x != y);       // Diferente de
+        bool maior = (x > y);            // Maior que
+        bool maiorOuIgual = (x >= y);    // Maior ou igual a
+        bool menor = (x < y);            // Menor que
+        bool menorOuIgual = (x <= y);    // Menor ou igual a
+            </code></pre>
         </section>
+
 
         <!-- Seção 3: Estruturas de controle básicas -->
         <section>
             <h2 id="estruturas-controle">Estruturas de controle básicas</h2>
             <p>Nesta seção, você aprenderá sobre as estruturas de controle básicas no AngelScript.</p>
+
+            <!-- Estruturas de decisão -->
+            <h3>Estruturas de decisão (if, else, switch)</h3>
+            <p>As estruturas de decisão permitem que o código execute diferentes blocos de código com base em condições específicas. Em AngelScript, as estruturas de decisão incluem:</p>
             <ul>
-                <li>Estruturas de decisão (if, else, switch)</li>
-                <li>Estruturas de repetição (for, while, do-while)</li>
-                <li>Uso de break e continue</li>
+                <li><strong>if</strong>: Executa um bloco de código se uma condição for verdadeira.</li>
+                <li><strong>else</strong>: Executa um bloco de código se a condição no if for falsa.</li>
+                <li><strong>else if</strong>: Especifica uma nova condição se a condição anterior for falsa.</li>
+                <li><strong>switch</strong>: Seleciona um dos muitos blocos de código para serem executados.</li>
             </ul>
+            <p>Exemplo de uso das estruturas de decisão:</p>
+            <pre><code class="language-angelscript">
+        int a = 10;
+        if (a > 5) {
+            // Este bloco será executado se a for maior que 5
+        } else if (a == 5) {
+            // Este bloco será executado se a for igual a 5
+        } else {
+            // Este bloco será executado se a for menor que 5
+        }
+
+        int b = 2;
+        switch (b) {
+            case 1:
+                // Código a ser executado se b for igual a 1
+                break;
+            case 2:
+                // Código a ser executado se b for igual a 2
+                break;
+            default:
+                // Código a ser executado se b não for igual a 1 ou 2
+                break;
+        }
+            </code></pre>
+
+            <!-- Estruturas de repetição -->
+            <h3>Estruturas de repetição (for, while, do-while)</h3>
+            <p>As estruturas de repetição permitem que o código execute repetidamente um bloco de código enquanto uma condição específica for verdadeira. Em AngelScript, as estruturas de repetição incluem:</p>
+            <ul>
+                <li><strong>for</strong>: Executa um bloco de código um número específico de vezes.</li>
+                <li><strong>while</strong>: Executa um bloco de código enquanto uma condição for verdadeira.</li>
+                <li><strong>do-while</strong>: Executa um bloco de código pelo menos uma vez e, em seguida, enquanto a condição for verdadeira.</li>
+            </ul>
+            <p>Exemplo de uso das estruturas de repetição:</p>
+            <pre><code class="language-angelscript">
+        for (int i = 0; i < 5; i++) {
+            // Este bloco será executado 5 vezes
+        }
+
+        int j = 0;
+        while (j < 5) {
+            // Este bloco será executado enquanto j for menor que 5
+            j++;
+        }
+
+        int k = 0;
+        do {
+            // Este bloco será executado pelo menos uma vez e enquanto k for menor que 5
+            k++;
+        } while (k < 5);
+            </code></pre>
+
+            <!-- Uso de break e continue -->
+            <h3>Uso de break e continue</h3>
+            <p>Os comandos <strong>break</strong> e <strong>continue</strong> são utilizados para controlar o fluxo de execução dos loops.</p>
+            <ul>
+                <li><strong>break</strong>: Encerra a execução do loop mais interno.</li>
+                <li><strong>continue</strong>: Interrompe a iteração atual e passa para a próxima iteração do loop.</li>
+            </ul>
+            <p>Exemplo de uso de break e continue:</p>
+            <pre><code class="language-angelscript">
+        for (int i = 0; i < 10; i++) {
+            if (i == 5) {
+                break; // Encerra o loop quando i for igual a 5
+            }
+        }
+
+        for (int j = 0; j < 10; j++) {
+            if (j % 2 == 0) {
+                continue; // Pula para a próxima iteração se j for par
+            }
+            // Este bloco será executado apenas para valores ímpares de j
+        }
+            </code></pre>
         </section>
+
 
         <!-- Link de Retorno -->
         <a href="index.html">← Voltar para a página principal</a>
@@ -118,7 +256,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2024 [Nome da Instituição ou do Curso]. Todos os direitos reservados.</p>
+        <p>&copy; 2024 Wellyngton Molinari. Todos os direitos reservados.</p>
     </footer>
 
     <script src="scripts.js"></script>
