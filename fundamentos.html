@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Módulo 3: Fundamentos da Linguagem</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagens/faviconcourse.jpeg" type="image/x-icon">
+</head>
+<body>
+    <!-- Botão para alternar entre modos claro e escuro -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">🌙</button>
+
+    <!-- Botão de Toggle para a Sidebar -->
+    <button class="toggle-btn" id="toggle-sidebar">☰ Menu</button>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h3>
+            Navegação do Curso
+            <button class="hide-sidebar-btn" id="hide-sidebar">&lt;</button>
+        </h3>
+        <nav>
+            <a href="#variaveis-tipos">Variáveis e tipos de dados</a>
+            <a href="#operadores">Operadores aritméticos, lógicos e de comparação</a>
+        </nav>
+        <h3>Páginas Relacionadas</h3>
+        <a href="extras.html">Extras</a>
+        <a href="extras2.html">Extras2</a>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container" id="main-content">
+        <h1>Módulo 3: Fundamentos da Linguagem</h1>
+
+        <!-- Espaço para a imagem -->
+        <div class="image-container">
+            <img src="imagens/curso-imagem.jpg" alt="Imagem do Curso">
+        </div>
+
+        <!-- Seção 1: Variáveis e tipos de dados -->
+        <section>
+            <h2 id="variaveis-tipos">Variáveis e tipos de dados</h2>
+            <p>Nesta seção, você aprenderá sobre variáveis e tipos de dados no AngelScript.</p>
+
+            <!-- O que são variáveis? -->
+            <h3>O que são variáveis?</h3>
+            <p>Variáveis são espaços na memória do computador que armazenam valores temporários utilizados pelo programa durante sua execução. Elas têm nomes específicos, que são utilizados para referenciar os valores armazenados nesses espaços. Em AngelScript, como em outras linguagens de programação, você pode usar variáveis para armazenar diferentes tipos de dados, como números, textos e outros.</p>
+            <pre><code class="language-angelscript">
+        int minhaVariavel;  // Declara uma variável do tipo inteiro
+        minhaVariavel = 10; // Atribui o valor 10 à variável
+            </code></pre>
+
+            <!-- Tipos de dados básicos -->
+            <h3>Tipos de dados básicos</h3>
+            <p>Os tipos de dados definem o tipo de valor que uma variável pode armazenar. Em AngelScript, há vários tipos de dados básicos, incluindo:</p>
+            <ul>
+                <li><strong>int</strong>: Utilizado para armazenar números inteiros.</li>
+                <li><strong>float</strong>: Utilizado para armazenar números de ponto flutuante (decimais).</li>
+                <li><strong>bool</strong>: Utilizado para armazenar valores booleanos (verdadeiro ou falso).</li>
+                <li><strong>string</strong>: Utilizado para armazenar sequências de caracteres (textos).</li>
+            </ul>
+            <p>Exemplos:</p>
+            <pre><code class="language-angelscript">
+        int idade = 25;           // Número inteiro
+        float altura = 1.75;      // Número decimal
+        bool aprovado = true;     // Valor booleano
+        string nome = "João";     // Texto
+            </code></pre>
+
+            <!-- Declaração e inicialização de variáveis -->
+            <h3>Declaração e inicialização de variáveis</h3>
+            <p>A declaração de uma variável é o processo de informar ao compilador o nome e o tipo da variável. A inicialização é o processo de atribuir um valor inicial à variável. Você pode declarar e inicializar uma variável ao mesmo tempo ou em etapas separadas.</p>
+            <p>Declaração e inicialização separadas:</p>
+            <pre><code class="language-angelscript">
+        int numero;     // Declaração
+        numero = 10;    // Inicialização
+            </code></pre>
+            <p>Declaração e inicialização juntas:</p>
+            <pre><code class="language-angelscript">
+        int numero = 10; // Declaração e inicialização
+            </code></pre>
+            <p>Exemplos com diferentes tipos de dados:</p>
+            <pre><code class="language-angelscript">
+        int idade = 30;
+        float preco = 19.99;
+        bool ativo = false;
+        string mensagem = "Olá, Mundo!";
+            </code></pre>
+        </section>
+
+
+        <!-- Seção 2: Operadores aritméticos, lógicos e de comparação -->
+        <section>
+            <h2 id="operadores">Operadores aritméticos, lógicos e de comparação</h2>
+            <p>Nesta seção, você aprenderá sobre operadores aritméticos, lógicos e de comparação no AngelScript.</p>
+            <ul>
+                <li>Operadores aritméticos</li>
+                <li>Operadores lógicos</li>
+                <li>Operadores de comparação</li>
+            </ul>
+        </section>
+
+        <!-- Seção 3: Estruturas de controle básicas -->
+        <section>
+            <h2 id="estruturas-controle">Estruturas de controle básicas</h2>
+            <p>Nesta seção, você aprenderá sobre as estruturas de controle básicas no AngelScript.</p>
+            <ul>
+                <li>Estruturas de decisão (if, else, switch)</li>
+                <li>Estruturas de repetição (for, while, do-while)</li>
+                <li>Uso de break e continue</li>
+            </ul>
+        </section>
+
+        <!-- Link de Retorno -->
+        <a href="index.html">← Voltar para a página principal</a>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 [Nome da Instituição ou do Curso]. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
