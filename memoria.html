@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de AngelScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagens/angelscriptimage.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Botão para alternar entre modos claro e escuro -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">🌙</button>
+
+    <!-- Botão de Toggle para a Sidebar -->
+    <button class="toggle-btn" id="toggle-sidebar">☰ Menu</button>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h3>
+            Navegação do Curso
+            <button class="hide-sidebar-btn" id="hide-sidebar">&lt;</button>
+        </h3>
+        <nav>
+            <a href="#section1">O que é AngelScript?</a>
+        </nav>
+        <h3>Páginas Relacionadas</h3>
+        <a href="index.html">Início</a>
+        <a href="https://github.com/WellyngtonMolinari" target="_blank">Meu Github</a>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container" id="main-content">
+        <h1>Curso de AngelScript</h1>
+
+        <!-- Espaço para a imagem -->
+        <div class="image-container">
+            <img src="imagens/angelscriptimage.png" alt="Imagem do Curso">
+        </div>
+
+        <!-- Seção 9: Manipulação de Memória -->
+        <section>
+            <h2 id="memoria">Módulo 9: Manipulação de Memória</h2>
+            <p>Neste módulo, você aprenderá sobre a gestão de memória em AngelScript.</p>
+
+            <!-- Alocação e desalocação de memória -->
+            <h3>Alocação e desalocação de memória</h3>
+            <p>Alocação de memória refere-se ao processo de reservar espaço na memória para armazenar dados. Desalocação de memória é o processo de liberar esse espaço quando ele não é mais necessário.</p>
+            <pre><code class="language-angelscript">
+        // Alocação de memória para um objeto
+        MyClass@ obj = MyClass();
+
+        // Desalocação de memória (ocorre automaticamente quando a referência não é mais utilizada)
+        @obj = null;
+            </code></pre>
+            <p>Em AngelScript, a coleta de lixo (garbage collection) cuida da desalocação de memória automaticamente, liberando a memória quando os objetos não são mais referenciados.</p>
+
+            <!-- Ponteiros e referências -->
+            <h3>Ponteiros e referências</h3>
+            <p>Ponteiros são variáveis que armazenam endereços de memória de outros objetos. Referências são aliases para outros objetos. Ambos são usados para acessar e manipular objetos na memória.</p>
+            <pre><code class="language-angelscript">
+        // Exemplo de referência
+        MyClass obj;
+        MyClass@ ref = obj; // ref é uma referência para obj
+
+        // Exemplo de ponteiro (usado em funções)
+        void Func(MyClass@ obj) {
+            // Manipula o objeto original através do ponteiro
+            obj.Method();
+        }
+            </code></pre>
+            <p>Exemplo de uso de ponteiros e referências:</p>
+            <pre><code class="language-angelscript">
+        class MyClass {
+            void Method() {
+                print("Método chamado!");
+            }
+        }
+
+        void main() {
+            MyClass obj;
+            MyClass@ ref = obj; // ref é uma referência para obj
+            ref.Method(); // Saída: Método chamado!
+
+            Func(@obj);
+        }
+
+        void Func(MyClass@ obj) {
+            obj.Method(); // Saída: Método chamado!
+        }
+            </code></pre>
+
+            <!-- Boas práticas -->
+            <h3>Boas práticas</h3>
+            <p>Seguir boas práticas na gestão de memória ajuda a evitar problemas como vazamentos de memória e referências pendentes. Aqui estão algumas dicas:</p>
+            <ul>
+                <li>Use referências e ponteiros com cuidado para evitar acessar memória desalocada.</li>
+                <li>Libere recursos explicitamente quando não forem mais necessários, embora a coleta de lixo ajude nisso.</li>
+                <li>Evite referências circulares, pois elas podem impedir que a coleta de lixo libere a memória corretamente.</li>
+                <li>Teste e monitore o uso de memória do seu aplicativo para identificar e resolver vazamentos de memória.</li>
+            </ul>
+        </section>
+
+
+        <!-- Link de Retorno -->
+        <a href="index.html">← Voltar para a página principal</a>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Wellyngton Molinari. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

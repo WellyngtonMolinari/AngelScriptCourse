@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de AngelScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagens/angelscriptimage.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Botão para alternar entre modos claro e escuro -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">🌙</button>
+
+    <!-- Botão de Toggle para a Sidebar -->
+    <button class="toggle-btn" id="toggle-sidebar">☰ Menu</button>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h3>
+            Navegação do Curso
+            <button class="hide-sidebar-btn" id="hide-sidebar">&lt;</button>
+        </h3>
+        <nav>
+            <a href="#section1">O que é AngelScript?</a>
+        </nav>
+        <h3>Páginas Relacionadas</h3>
+        <a href="index.html">Início</a>
+        <a href="https://github.com/WellyngtonMolinari" target="_blank">Meu Github</a>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container" id="main-content">
+        <h1>Curso de AngelScript</h1>
+
+        <!-- Espaço para a imagem -->
+        <div class="image-container">
+            <img src="imagens/angelscriptimage.png" alt="Imagem do Curso">
+        </div>
+
+        <!-- Seção 8: Interfaces e Módulos -->
+        <section>
+            <h2 id="interfaces">Módulo 8: Interfaces e Módulos</h2>
+            <p>Aprenda sobre a modularização e interfaces em AngelScript.</p>
+
+            <!-- Definição e uso de interfaces -->
+            <h3>Definição e uso de interfaces</h3>
+            <p>Interfaces são contratos que definem métodos que devem ser implementados por classes. Elas são úteis para garantir que diferentes classes implementem métodos específicos de maneira consistente.</p>
+            <pre><code class="language-angelscript">
+        interface IAnimal {
+            void Falar();
+        }
+
+        class Cachorro : IAnimal {
+            void Falar() {
+                print("Au Au");
+            }
+        }
+
+        class Gato : IAnimal {
+            void Falar() {
+                print("Miau");
+            }
+        }
+            </code></pre>
+            <p>Exemplo de uso de interfaces:</p>
+            <pre><code class="language-angelscript">
+        IAnimal animal = Cachorro();
+        animal.Falar(); // Saída: Au Au
+
+        animal = Gato();
+        animal.Falar(); // Saída: Miau
+            </code></pre>
+
+            <!-- Criação e uso de módulos -->
+            <h3>Criação e uso de módulos</h3>
+            <p>Módulos permitem a divisão do código em partes menores e reutilizáveis. Eles são úteis para organizar e manter o código.</p>
+            <pre><code class="language-angelscript">
+        // Definindo um módulo (arquivo .as)
+        shared void MinhaFuncao() {
+            print("Função em um módulo!");
+        }
+            </code></pre>
+            <p>Exemplo de uso de módulos:</p>
+            <pre><code class="language-angelscript">
+        // Importando e usando um módulo
+        import void MinhaFuncao() from "MeuModulo";
+
+        void main() {
+            MinhaFuncao(); // Saída: Função em um módulo!
+        }
+            </code></pre>
+
+            <!-- Organização de código em módulos -->
+            <h3>Organização de código em módulos</h3>
+            <p>Organizar o código em módulos ajuda a manter o código limpo e gerenciável. Cada módulo deve ter uma responsabilidade específica.</p>
+            <pre><code class="language-angelscript">
+        // Arquivo: Animais.as
+        shared interface IAnimal {
+            void Falar();
+        }
+
+        shared class Cachorro : IAnimal {
+            void Falar() {
+                print("Au Au");
+            }
+        }
+
+        shared class Gato : IAnimal {
+            void Falar() {
+                print("Miau");
+            }
+        }
+
+        // Arquivo: main.as
+        import IAnimal from "Animais";
+        import Cachorro from "Animais";
+        import Gato from "Animais";
+
+        void main() {
+            IAnimal animal = Cachorro();
+            animal.Falar(); // Saída: Au Au
+
+            animal = Gato();
+            animal.Falar(); // Saída: Miau
+        }
+            </code></pre>
+        </section>
+
+        <!-- Link de Retorno -->
+        <a href="index.html">← Voltar para a página principal</a>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Wellyngton Molinari. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

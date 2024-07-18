@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de AngelScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagens/angelscriptimage.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Botão para alternar entre modos claro e escuro -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">🌙</button>
+
+    <!-- Botão de Toggle para a Sidebar -->
+    <button class="toggle-btn" id="toggle-sidebar">☰ Menu</button>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h3>
+            Navegação do Curso
+            <button class="hide-sidebar-btn" id="hide-sidebar">&lt;</button>
+        </h3>
+        <nav>
+            <a href="#section1">O que é AngelScript?</a>
+        </nav>
+        <h3>Páginas Relacionadas</h3>
+        <a href="index.html">Início</a>
+        <a href="https://github.com/WellyngtonMolinari" target="_blank">Meu Github</a>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container" id="main-content">
+        <h1>Curso de AngelScript</h1>
+
+        <!-- Espaço para a imagem -->
+        <div class="image-container">
+            <img src="imagens/angelscriptimage.png" alt="Imagem do Curso">
+        </div>
+
+        <!-- Seção 10: Tratamento de Exceções -->
+        <section>
+            <h2 id="excecoes">Módulo 10: Tratamento de Exceções</h2>
+            <p>Este módulo aborda o tratamento de exceções e erros em AngelScript.</p>
+
+            <!-- Introdução ao tratamento de exceções -->
+            <h3>Introdução ao tratamento de exceções</h3>
+            <p>Exceções são usadas para lidar com erros e condições excepcionais de forma estruturada. Quando ocorre um erro, uma exceção pode ser lançada e capturada para evitar que o programa seja encerrado abruptamente.</p>
+            <pre><code class="language-angelscript">
+        void main() {
+            try {
+                int result = Divide(10, 0);
+            } catch (const string &in errMsg) {
+                print("Erro: " + errMsg);
+            }
+        }
+
+        int Divide(int a, int b) {
+            if (b == 0) {
+                throw "Divisão por zero!";
+            }
+            return a / b;
+        }
+            </code></pre>
+
+            <!-- Blocos try, catch e finally -->
+            <h3>Blocos try, catch e finally</h3>
+            <p>Blocos <code>try</code> são usados para delimitar o código que pode lançar exceções. Blocos <code>catch</code> são usados para capturar e lidar com essas exceções. O bloco <code>finally</code> pode ser usado para executar código que deve ser executado independentemente de uma exceção ter sido lançada ou não.</p>
+            <pre><code class="language-angelscript">
+        void main() {
+            try {
+                int result = Divide(10, 2);
+                print("Resultado: " + result);
+            } catch (const string &in errMsg) {
+                print("Erro: " + errMsg);
+            } finally {
+                print("Execução do bloco finally.");
+            }
+        }
+
+        int Divide(int a, int b) {
+            if (b == 0) {
+                throw "Divisão por zero!";
+            }
+            return a / b;
+        }
+            </code></pre>
+            <p>O bloco <code>finally</code> é útil para liberar recursos ou realizar ações de limpeza.</p>
+
+            <!-- Criação de exceções personalizadas -->
+            <h3>Criação de exceções personalizadas</h3>
+            <p>Você pode criar exceções personalizadas para representar tipos específicos de erros em seu programa.</p>
+            <pre><code class="language-angelscript">
+        class CustomException {
+            string message;
+            CustomException(const string &in msg) {
+                message = msg;
+            }
+            string GetMessage() const {
+                return message;
+            }
+        }
+
+        void main() {
+            try {
+                ThrowCustomException();
+            } catch (const CustomException &in ex) {
+                print("Erro: " + ex.GetMessage());
+            }
+        }
+
+        void ThrowCustomException() {
+            throw CustomException("Erro personalizado lançado!");
+        }
+            </code></pre>
+            <p>Usando classes de exceção personalizadas, você pode incluir informações adicionais sobre o erro e gerenciar melhor diferentes tipos de exceções.</p>
+        </section>
+
+
+        <!-- Link de Retorno -->
+        <a href="index.html">← Voltar para a página principal</a>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Wellyngton Molinari. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
