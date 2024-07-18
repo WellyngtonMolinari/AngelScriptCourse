@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de AngelScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagens/angelscriptimage.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Botão para alternar entre modos claro e escuro -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">🌙</button>
+
+    <!-- Botão de Toggle para a Sidebar -->
+    <button class="toggle-btn" id="toggle-sidebar">☰ Menu</button>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h3>
+            Navegação do Curso
+            <button class="hide-sidebar-btn" id="hide-sidebar">&lt;</button>
+        </h3>
+        <nav>
+            <a href="#section1">O que é AngelScript?</a>
+        </nav>
+        <h3>Páginas Relacionadas</h3>
+        <a href="index.html">Início</a>
+        <a href="https://github.com/WellyngtonMolinari" target="_blank">Meu Github</a>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container" id="main-content">
+        <h1>Curso de AngelScript</h1>
+
+        <!-- Espaço para a imagem -->
+        <div class="image-container">
+            <img src="imagens/angelscriptimage.png" alt="Imagem do Curso">
+        </div>
+
+        <section>
+            <h2 id="projeto">Módulo 12: Projeto Final</h2>
+            <p>Este módulo é dedicado ao desenvolvimento de um projeto final utilizando AngelScript. Ao concluir este módulo, você terá a oportunidade de aplicar todos os conceitos aprendidos em um projeto prático.</p>
+        
+
+            <!-- Definição do projeto -->
+            <h3>Definição do projeto - Jogo de Adivinhação de Números/h3>
+            <p>O objetivo do jogo é que o jogador adivinhe um número gerado aleatoriamente pelo computador dentro de um determinado intervalo. O jogador receberá dicas se o palpite está muito alto ou muito baixo até acertar o número.</p>
+            <ul>
+                <li><strong>Objetivo:</strong> Criar um jogo interativo de adivinhação de números.</li>
+                <li><strong>Requisitos:</strong> O jogo deve gerar um número aleatório e permitir que o jogador faça tentativas de adivinhação até acertar.</li>
+            </ul>
+
+            <!-- Implementação passo a passo -->
+            <h3>Implementação passo a passo</h3>
+            <p>Vamos implementar o jogo de adivinhação de números em etapas claras e organizadas.</p>
+            <ol>
+                <li><strong>Configuração do Ambiente:</strong> Certifique-se de que você tem um ambiente de desenvolvimento configurado para executar AngelScript.</li>
+                
+                <li><strong>Estrutura do Projeto:</strong> Crie a estrutura inicial do projeto.
+                    <ul>
+                        <li>Crie um arquivo principal, como <code>main.as</code>.</li>
+                    </ul>
+                </li>
+
+                <li><strong>Gerar o Número Aleatório:</strong> Implemente a lógica para gerar um número aleatório.
+                    <pre><code class="language-angelscript">
+        // Gera um número aleatório entre 1 e 100
+        int GenerateRandomNumber() {
+            return rand() % 100 + 1;
+        }
+                    </code></pre>
+                </li>
+
+                <li><strong>Receber Palpites do Jogador:</strong> Implemente a função para obter os palpites do jogador.
+                    <pre><code class="language-angelscript">
+        // Lê a entrada do jogador
+        int GetPlayerGuess() {
+            int guess;
+            print("Digite seu palpite: ");
+            guess = std::stoi(stdin.gets());
+            return guess;
+        }
+                    </code></pre>
+                </li>
+
+                <li><strong>Comparar Palpite com Número Aleatório:</strong> Implemente a lógica para comparar o palpite do jogador com o número aleatório.
+                    <pre><code class="language-angelscript">
+        void CompareGuess(int guess, int randomNumber) {
+            if (guess < randomNumber) {
+                print("Muito baixo! Tente novamente.\n");
+            } else if (guess > randomNumber) {
+                print("Muito alto! Tente novamente.\n");
+            } else {
+                print("Parabéns! Você acertou o número!\n");
+            }
+        }
+                    </code></pre>
+                </li>
+
+                <li><strong>Loop Principal do Jogo:</strong> Implemente o loop principal do jogo para continuar até que o jogador acerte o número.
+                    <pre><code class="language-angelscript">
+        void main() {
+            int randomNumber = GenerateRandomNumber();
+            int guess;
+            
+            while (true) {
+                guess = GetPlayerGuess();
+                CompareGuess(guess, randomNumber);
+                
+                if (guess == randomNumber) {
+                    break;
+                }
+            }
+        }
+                    </code></pre>
+                </li>
+            </ol>
+
+            <!-- Testes e depuração -->
+            <h3>Testes e depuração</h3>
+            <p>É importante testar o jogo para garantir que todas as partes funcionem corretamente.</p>
+            <ul>
+                <li><strong>Teste de Unidade:</strong> Teste cada função individualmente, como <code>GenerateRandomNumber()</code> e <code>GetPlayerGuess()</code>.</li>
+                <li><strong>Teste de Integração:</strong> Teste o jogo completo para garantir que as funções trabalhem bem juntas.</li>
+                <li><strong>Depuração:</strong> Utilize prints e verificações de variáveis para depurar problemas durante o desenvolvimento.</li>
+            </ul>
+
+            <p>Ao concluir este projeto, você terá criado um jogo completo de adivinhação de números, aplicando conceitos essenciais de AngelScript.</p>
+        
+            <p>Ao finalizar este módulo, você terá completado um projeto prático que demonstra sua proficiência em AngelScript, consolidando assim os conhecimentos adquiridos ao longo do curso.</p>
+        </section>
+        
+
+
+        <!-- Link de Retorno -->
+        <a href="index.html">← Voltar para a página principal</a>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Wellyngton Molinari. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
