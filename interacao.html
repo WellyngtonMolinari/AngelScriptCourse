@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de AngelScript</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="imagens/angelscriptimage.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Botão para alternar entre modos claro e escuro -->
+    <button class="dark-mode-toggle" id="dark-mode-toggle">🌙</button>
+
+    <!-- Botão de Toggle para a Sidebar -->
+    <button class="toggle-btn" id="toggle-sidebar">☰ Menu</button>
+    
+    <!-- Sidebar -->
+    <div class="sidebar" id="sidebar">
+        <h3>
+            Navegação do Curso
+            <button class="hide-sidebar-btn" id="hide-sidebar">&lt;</button>
+        </h3>
+        <nav>
+            <a href="#section1">O que é AngelScript?</a>
+        </nav>
+        <h3>Páginas Relacionadas</h3>
+        <a href="index.html">Início</a>
+        <a href="https://github.com/WellyngtonMolinari" target="_blank">Meu Github</a>
+    </div>
+
+    <!-- Conteúdo Principal -->
+    <div class="container" id="main-content">
+        <h1>Curso de AngelScript</h1>
+
+        <!-- Espaço para a imagem -->
+        <div class="image-container">
+            <img src="imagens/angelscriptimage.png" alt="Imagem do Curso">
+        </div>
+
+    <!-- Módulo 11: Interação com C++ -->
+    <section>
+        <h2 id="interacao">Módulo 11: Interação com C++</h2>
+        <p>Aprenda como integrar AngelScript com código C++.</p>
+    
+        <!-- Chamando funções C++ de AngelScript -->
+        <h3>Chamando funções C++ de AngelScript</h3>
+        <p>AngelScript permite chamar funções escritas em C++. Para isso, você deve registrar as funções C++ no motor do AngelScript.</p>
+        <pre><code class="language-cpp">
+    // Código C++
+    // Função C++ que será chamada a partir do AngelScript
+    void HelloWorld() {
+        std::cout << "Hello, world!" << std::endl;
+    }
+    
+    // Registrando a função no motor do AngelScript
+    engine->RegisterGlobalFunction("void HelloWorld()", asFUNCTION(HelloWorld), asCALL_CDECL);
+        </code></pre>
+        <p>Após registrar a função, você pode chamá-la diretamente de um script AngelScript:</p>
+        <pre><code class="language-angelscript">
+    void main() {
+        HelloWorld();
+    }
+        </code></pre>
+    
+        <!-- Expondo classes C++ para AngelScript -->
+        <h3>Expondo classes C++ para AngelScript</h3>
+        <p>Além de funções, você pode expor classes C++ para uso em scripts AngelScript. Primeiro, você deve registrar a classe e seus membros no motor do AngelScript.</p>
+        <pre><code class="language-cpp">
+    // Código C++
+    // Classe C++ que será exposta ao AngelScript
+    class MyClass {
+    public:
+        void Print() {
+            std::cout << "MyClass::Print()" << std::endl;
+        }
+    };
+    
+    // Registrando a classe no motor do AngelScript
+    engine->RegisterObjectType("MyClass", 0, asOBJ_REF);
+    engine->RegisterObjectBehaviour("MyClass", asBEHAVE_FACTORY, "MyClass@ f()", asFUNCTION(MyClass_Factory), asCALL_CDECL);
+    engine->RegisterObjectMethod("MyClass", "void Print()", asMETHOD(MyClass, Print), asCALL_THISCALL);
+        </code></pre>
+        <p>Depois de registrar a classe, você pode criar instâncias e chamar métodos da classe em um script AngelScript:</p>
+        <pre><code class="language-angelscript">
+    void main() {
+        MyClass@ obj = MyClass();
+        obj.Print();
+    }
+        </code></pre>
+    
+        <!-- Exemplos de integração prática -->
+        <h3>Exemplos de integração prática</h3>
+        <p>Integrar AngelScript com C++ é útil para estender a funcionalidade de seus scripts, permitindo que eles utilizem bibliotecas e funcionalidades complexas implementadas em C++. Aqui está um exemplo prático de integração:</p>
+        <pre><code class="language-cpp">
+    // Código C++
+    // Função para calcular a soma de dois números
+    int Add(int a, int b) {
+        return a + b;
+    }
+    
+    // Registrando a função no motor do AngelScript
+    engine->RegisterGlobalFunction("int Add(int, int)", asFUNCTION(Add), asCALL_CDECL);
+        </code></pre>
+        <pre><code class="language-angelscript">
+    void main() {
+        int result = Add(5, 3);
+        print("Resultado: " + result); // Saída: Resultado: 8
+    }
+        </code></pre>
+        <p>Este exemplo mostra como funções C++ podem ser usadas para realizar operações complexas, que são então acessíveis a partir de scripts AngelScript.</p>
+    </section>
+
+
+        <!-- Link de Retorno -->
+        <a href="index.html">← Voltar para a página principal</a>
+        
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Wellyngton Molinari. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
